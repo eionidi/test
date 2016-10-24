@@ -1,2 +1,2 @@
 # test
-Тест на коммуникабельность
+Check yourself, how you are sociable, outgoing, open minded
