@@ -1,22 +1,16 @@
 class ResultPrinter
-
   def initialize
     current_path = File.dirname(__FILE__)
     file_name = current_path + "/results.txt"
-
     if !File.exist?(file_name)
       abort "Невозможно загрузить результаты!"
     end
-
     f = File.new(file_name)
     @results = f.readlines
     f.close
   end
-
   def print_result(test)
-
     puts "\nВаш результат теста - #{test.points} баллов:"
-
     if (test.points >= 30)
       puts @results[0]
     elsif (test.points >= 25 && test.points <= 29)
