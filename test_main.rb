@@ -1,10 +1,10 @@
 require "./" + File.dirname(__FILE__) + "/test.rb"
 require "./" + File.dirname(__FILE__) + "/test_result_printer.rb"
 
-version = "Ваш уровень общительности. Version 3\n"
-puts version
+VERSION = "Ваш уровень общительности. Version 3"
 
 test = Test.new
+test.version = VERSION
 test_result_printer = ResultPrinter.new
 
 while test.next_question == true do
