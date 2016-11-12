@@ -5,7 +5,6 @@ class Test
   def initialize
     current_path = File.dirname(__FILE__)
     file_name = current_path + "/quest.txt"
-    #abort "Невозможно загрузить вопросы!" if !File.exist?(file_name)
     begin
       f = File.new(file_name)
     rescue
@@ -24,17 +23,9 @@ class Test
       puts "введите 'да', 'нет' или 'иногда' и нажмите Enter"
       user_input = STDIN.gets.chomp.downcase
     end
-    if (user_input == "да")
-      @points += 2
-    elsif (user_input == "иногда")
-      @points += 1
-    end
+    @points += 2 if (user_input == "да")
+    @points += 1 if (user_input == "иногда")
     @current_question += 1
-
-    return @current_question < @questions.size
-  end
-
-  def points
-    return @points
+    @current_question < @questions.size
   end
 end

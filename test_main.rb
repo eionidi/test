@@ -1,8 +1,7 @@
-require './' + File.dirname(__FILE__) + '/test.rb'
-require './' + File.dirname(__FILE__) + '/result_printer.rb'
+require "./" + File.dirname(__FILE__) + "/test.rb"
+require "./" + File.dirname(__FILE__) + "/result_printer.rb"
 
-VERSION = "Ваш уровень общительности. Version 3\n"
-
+VERSION = "Ваш уровень общительности. Version 3"
 
 test = Test.new
 test.version = VERSION
