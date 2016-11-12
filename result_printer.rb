@@ -1,10 +1,13 @@
 class ResultPrinter
-
+  class KitQuestions < RuntimeError; end
+  
   def initialize
     current_path = File.dirname(__FILE__)
     file_name = current_path + "/results.txt"
 
-    abort "Невозможно загрузить результаты!" if !File.exist?(file_name)
+    unless File.exist?(file_name)
+      raise NoDataFile.new("Невозможно загрузить результаты!")
+    end
 
     f = File.new(file_name)
     @results = f.readlines
