@@ -5,10 +5,11 @@ class Test
   def initialize
     current_path = File.dirname(__FILE__)
     file_name = current_path + "/quest.txt"
-
-    abort "Невозможно загрузить вопросы!" if !File.exist?(file_name)
-
-    f = File.new(file_name)
+    begin
+      f = File.new(file_name)
+    rescue
+      puts "Невозможно загрузить вопросы!"
+    end
     @questions = f.readlines
     f.close
     @points = 0
