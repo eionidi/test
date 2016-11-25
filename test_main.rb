@@ -1,5 +1,5 @@
-require "./" + File.dirname(__FILE__) + "/test.rb"
-require "./" + File.dirname(__FILE__) + "/result_printer.rb"
+require_relative 'test.rb'
+require_relative 'result_printer.rb'
 
 VERSION = "Ваш уровень общительности. Version 3"
 

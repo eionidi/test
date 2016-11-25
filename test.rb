@@ -8,7 +8,7 @@ class Test
     begin
       f = File.new(file_name)
     rescue
-      puts "Невозможно загрузить вопросы!"
+      raise "Невозможно загрузить вопросы!"
     end
     @questions = f.readlines
     f.close
