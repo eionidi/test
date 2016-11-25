@@ -5,11 +5,12 @@ class Test
   def initialize
     current_path = File.dirname(__FILE__)
     file_name = current_path + "/quest.txt"
-    begin
-      f = File.new(file_name)
-    rescue
+
+    unless File.exist?(file_name)
       raise "Невозможно загрузить вопросы!"
     end
+
+    f = File.new(file_name)
     @questions = f.readlines
     f.close
     @points = 0
@@ -19,7 +20,7 @@ class Test
   def next_question
     puts @questions[@current_question]
     user_input = nil
-    until (user_input == "да" || user_input == "нет" || user_input == "иногда")
+    until user_input == "да" || user_input == "нет" || user_input == "иногда"
       puts "введите 'да', 'нет' или 'иногда' и нажмите Enter"
       user_input = STDIN.gets.chomp.downcase
     end
